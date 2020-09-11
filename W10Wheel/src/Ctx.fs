@@ -449,7 +449,7 @@ type private VHAdjuster() =
     [<VolatileField>] static let mutable _method: VHAdjusterMethod = Switching
     [<VolatileField>] static let mutable firstPreferVertical = true
     [<VolatileField>] static let mutable firstMinThreshold = 5
-    [<VolatileField>] static let mutable switchingThreshold = 50
+    [<VolatileField>] static let mutable switchingThreshold = 1
 
     static member Mode
         with get() = mode
@@ -958,7 +958,7 @@ let private createVhAdjusterMenu () =
 
     addBool DataID.firstPreferVertical
     addNum DataID.firstMinThreshold 1 10
-    addNum DataID.switchingThreshold 10 500
+    addNum DataID.switchingThreshold 1 500
 
     menu
 
